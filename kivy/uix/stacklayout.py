@@ -245,7 +245,7 @@ class StackLayout(Layout):
                     testsizes[-1] = max(0, c.size[innerattr])
                 availsize -= testsizes[-1]
 
-            if availsize >= 0 or not lc:
+            if (availsize + 1e-9) >= 0 or not lc:
                 # even if there's no space, we always add one widget to a row
                 lc.append(c)
                 sizes = testsizes
